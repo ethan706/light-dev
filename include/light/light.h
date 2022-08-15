@@ -3,6 +3,10 @@
 
 #include <light/config.h>
 
+#include <light/event/event.h>
+#include <light/event/keyboard.h>
+#include <light/event/mouse.h>
+
 namespace light {
 
 LIGHT_API void Init();

@@ -17,6 +17,9 @@ add_subdirectory("external/glfw")
 
 add_library(light ${LIGHT_LIB_TYPE}
   "src/light.cpp"
+  "src/event/event.cpp"
+  "src/event/keyboard.cpp"
+  "src/event/mouse.cpp"
 )
 
 target_include_directories(light
