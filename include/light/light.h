@@ -5,6 +5,7 @@
 
 #include <light/event/event.h>
 #include <light/event/keyboard.h>
+#include <light/event/listener.h>
 #include <light/event/mouse.h>
 #include <light/event/window.h>
 
