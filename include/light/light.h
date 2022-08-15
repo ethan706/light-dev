@@ -6,6 +6,7 @@
 #include <light/event/event.h>
 #include <light/event/keyboard.h>
 #include <light/event/mouse.h>
+#include <light/event/window.h>
 
 namespace light {
 

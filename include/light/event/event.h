@@ -12,7 +12,9 @@ enum class EventType {
   MouseMove,
   MouseDown,
   MouseUp,
-  MouseScroll
+  MouseScroll,
+  WindowClose,
+  WindowResize
 };
 
 class LIGHT_API Event {
