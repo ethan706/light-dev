@@ -9,6 +9,8 @@
 #include <light/event/mouse.h>
 #include <light/event/window.h>
 
+#include <light/window/window.h>
+
 namespace light {
 
 LIGHT_API void Init();

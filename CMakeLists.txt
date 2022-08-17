@@ -21,6 +21,7 @@ add_library(light ${LIGHT_LIB_TYPE}
   "src/event/keyboard.cpp"
   "src/event/mouse.cpp"
   "src/event/window.cpp"
+  "src/window/window.cpp"
 )
 
 target_include_directories(light
