@@ -3,8 +3,10 @@
 
 #include <array>
 #include <string>
+#include <vector>
 #include <light/config.h>
 #include <light/event/listener.h>
+#include <light/window/layer.h>
 
 namespace light {
 
@@ -21,6 +23,10 @@ class LIGHT_API Window {
 
   void Update();
 
+  void AttachLayer(int index, Layer* layer);
+  void DetachLayer(int index);
+  int GetLayerAmount() const;
+
   WindowEventListener listener;
 
   // read only
@@ -32,6 +38,7 @@ class LIGHT_API Window {
   void Init();
 
   void* window_;
+  std::vector<Layer*> layers_;
 
   unsigned int width_;
   unsigned int height_;

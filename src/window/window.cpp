@@ -40,6 +40,33 @@ void Window::SetTitle(std::string title) {
 void Window::Update() {
   glfwPollEvents();
   glfwSwapBuffers(static_cast<GLFWwindow*>(window_));
+
+  for (auto i : layers_) {
+    i->OnUpdate();
+  }
+}
+
+void Window::AttachLayer(int index, Layer* layer) {
+  if (index >= 0) {
+    layers_.insert(layers_.begin() + index, layer);
+  } else {
+    layers_.insert(layers_.end() - index + 1, layer);
+  }
+  layer->OnAttach();
+}
+
+void Window::DetachLayer(int index) {
+  if (index >= 0) {
+    layers_[index]->OnDetach();
+    layers_.erase(layers_.begin() + index);
+  } else {
+    layers_[layers_.size() - index + 1]->OnDetach();
+    layers_.erase(layers_.end() - index + 1);
+  }
+}
+
+int Window::GetLayerAmount() const {
+  return layers_.size();
 }
 
 void Window::Init() {
